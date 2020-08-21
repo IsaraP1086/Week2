@@ -23,4 +23,5 @@ int main() {
 		find2mx(&a[0]);
 		printf("%d %d", mx, mx2);
 	}
+	return 0;
 }
