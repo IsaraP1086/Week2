@@ -46,8 +46,9 @@ int main() {
 			}
 
 		}
-		for (i = 1;i <= n;i++) printf("%d", a[i]);
-		printf("\n");
 	}
+	printf("Your array is :\n");
+	for (i = 1;i <= n;i++) printf("%d ", a[i]);
+	printf("\n");
 	return 0;
 }
