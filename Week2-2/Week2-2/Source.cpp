@@ -20,13 +20,16 @@ int main() {
 		scanf("%d", &a[i]);
 	}
 	printf("input amount of your command : ");
-	scanf("%d", &m);
-	while (m--) {
-		printf("Input your command : ");
+	while (1) {
+		printf("Input your command ( A to add , C to change , E to stop) : ");
 		scanf(" %c", &c);
 		if (c == 'A') {
 			printf("Which position in the array you want to change : ");
 			scanf("%d", &j);
+			if (j > n || j <= 0) {
+				printf("Fail to locate the number in that position\n");
+				continue;
+			}
 			printf("input how much you want to add : ");
 			scanf("%d", &temp);
 			add(&a[j], temp);
@@ -37,15 +40,24 @@ int main() {
 			if (d == 'N') {
 				printf("Which position in the array you want to change : ");
 				scanf("%d", &j);
+				if (j > n || j <= 0) {
+					printf("Fail to locate the number in that position\n");
+					continue;
+				}
 				toNeg(&a[j]);
 			}
 			if (d == 'P') {
 				printf("Which position in the array you want to change : ");
 				scanf("%d", &j);
+				if (j > n || j <= 0) {
+					printf("Fail to locate the number in that position\n");
+					continue;
+				}
 				toPos(&a[j]);
 			}
 
 		}
+		else if (c == 'E') break;
 	}
 	printf("Your array is :\n");
 	for (i = 1;i <= n;i++) printf("%d ", a[i]);
